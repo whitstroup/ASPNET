@@ -9,6 +9,8 @@
   <ItemGroup>
     <Content Remove="appsettings.json" />
     <Content Remove="appsettings.json" />
+    <Content Remove="Appsettings.json" />
+    <Content Remove="Appsettings.json" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Dapper" Version="2.0.35" />
