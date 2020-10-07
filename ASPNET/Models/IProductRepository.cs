@@ -12,5 +12,9 @@ namespace ASPNET.Models
         public IEnumerable<Category> GetCategories();
         public Product AssignCategory();
         public void DeleteProduct(Product product);
+        public IEnumerable<Product> SearchProduct(string search);
+        public void InsertImage(Product product);
     }
 }
+
+

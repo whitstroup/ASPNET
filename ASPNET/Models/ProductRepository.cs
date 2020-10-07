@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using Dapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.FileProviders;
 
 namespace ASPNET.Models
 {
@@ -56,7 +59,17 @@ namespace ASPNET.Models
                                        new { id = product.ProductID });
         }
 
+        public IEnumerable<Product> SearchProduct(string newname)
+        {
+            return _conn.Query<Product>("SELECT * FROM products WHERE NAME LIKE @name;",
+                new { name = "%" + newname + "%" });
+        }
 
+        public void InsertImage(Product product )
+        {
+            _conn.Execute("Update Products SET Image = @image WHERE ProductID = @productid",
+                new { image = product.Image, productid =product.ProductID });
+        }
 
 
 

@@ -9,14 +9,32 @@
   <ItemGroup>
     <Content Remove="appsettings.json" />
     <Content Remove="appsettings.json" />
-    <Content Remove="Appsettings.json" />
-    <Content Remove="Appsettings.json" />
+    <Content Remove="wwwroot\images\test.png" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Dapper" Version="2.0.35" />
     <PackageReference Include="MySql.Data" Version="8.0.21" />
+    <PackageReference Include="Microsoft.AspNet.Web.Optimization" Version="1.1.3" />
+    <PackageReference Include="bootstrap" Version="4.5.2" />
+    <PackageReference Include="PagedList.Mvc" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Product\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\images\\4b589712-0faf-4d58-a0eb-e8741f3ed8c1.png" />
+    <None Include="wwwroot\images\\54320397-8c87-421f-af6d-2d5772840e65.png" />
+    <None Include="wwwroot\images\\5c4cecab-e559-47fd-b418-d52072e0eab0.png" />
+    <None Include="wwwroot\images\\6223f3a4-2c02-49cb-b487-b632a48a114a.png" />
+    <None Include="wwwroot\images\\85d49bf4-8287-4b98-a102-e702ff6191a9.png" />
+    <None Include="wwwroot\images\\9034f932-2953-4470-af3f-4ce4473d7a8b.png" />
+    <None Include="wwwroot\images\c7c36139-a432-4186-bf3e-0a348532de2f.png" />
+    <None Include="wwwroot\images\\cf4d82eb-d7f4-4a96-b118-fb05c8714993.png" />
+    <None Include="wwwroot\images\\7bbf15ae-378c-4d31-9008-e3c9e4fbb794.png" />
+    <None Include="wwwroot\images\\59ca418d-ea6f-4d12-9a77-7a47ff884b58.jpeg" />
+    <None Include="wwwroot\images\\611b055b-b44f-4cf9-9b9c-ba498318b3bf.jpeg" />
+    <None Include="wwwroot\images\~\ab1d1193-f080-4bcf-8d4a-ee687cccdfbc.png" />
+    <None Include="wwwroot\images\~\c6ecb1a1-5b1c-4955-9ce3-a279d2b8b0e9.png" />
+    <None Include="wwwroot\images\\39adc5d7-3404-409f-a24c-a9a697ba5de5.png" />
   </ItemGroup>
 </Project>

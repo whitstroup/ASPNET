@@ -1,8 +1,8 @@
 ﻿@model Product
 
-<h3>@Model.Name Information</h3>
+<h3 class="text-white">@Model.Name Information</h3>
 
-<table class="table">
+<table class="table-dark">
     <tr>
         <th>Product ID</th>
         <th>Name</th>
@@ -18,12 +18,13 @@
         <td>@Model.CategoryID</td>
         <td>@Model.OnSale</td>
         <td>@Model.StockLevel</td>
+        <td><img src="@Model.Image" width="200" /></td>
     </tr>
 
 </table>
 
 <div style="display: block">
-    <a href="/Product/UpdateProduct/@Model.ProductID">Update this Product</a>
+    <a class="text-white" href="/Product/UpdateProduct/@Model.ProductID">Update this Product</a>
 </div>
 
 <div style="display: block">
@@ -33,3 +34,10 @@
         <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this product" />
     }
 </div>
+@*<div style="display: block">
+    @using (Html.ActionLink("Update", "Product" new { controller = "Product" }, new { target = "_blank" }
+    {
+        <input type="hidden" asp-for="ProductID" value="@Model.ProductID" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this product" />
+    }
+</div>*@

@@ -1,19 +1,37 @@
 ﻿@model Product
 
 <h2>Update @Model.Name</h2>
+<div><img src="@Model.Image" width="200" /></div>
+<div class="row">
+    <div class="col-md-5">
+        <form method="post" enctype="multipart/form-data" asp-controller="Product" asp-action="UploadButtonClick">
+            <input asp-for="ProductID" type="hidden" />
+            <div class="form-group">
+                <div class="col-md-10">
+                    <p>Upload file</p>
+                    <input asp-for="Image" class="form-control" name="files" type="file" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input class="btn btn-success" type="submit" value="Upload" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 
 @using (Html.BeginForm("UpdateProductToDatabase", "Product", "Post"))
 {
-    <input asp-for="ProductID" type="hidden" value="@Model.ProductID" />
+<input asp-for="ProductID" type="hidden" />
 
-    <label asp-for="Name" class="control-label">Name</label>
+                <label class="control-label">Name</label>
 
-    <input type="text" name="Name" class="form-control" value="@Model.Name" />
+                                <input asp-for="Name" type="text" name="Name" class="form-control" />
 
-    <label asp-for="Price" class="control-label">Price</label>
+                                                <label class="control-label">Price</label>
 
-    <input type="number" step="0.01" name="Price" class="form-control" value="@Model.Price" />
+                                                                <input asp-for="Price" type="number" step="0.01" name="Price" class="form-control" />
 
-    <input type="submit" value="Update Product" class="btn btn-primary" />
 
-}
+                                                                                <input type="submit" value="Update Product" class="btn btn-primary" />}

@@ -1,32 +1,73 @@
 ﻿@model IEnumerable<Product>
+@*<style>
+        h2
+        {
+            color:floralwhite;
+        }
 
-<h2>Products</h2>
+        table {
+            background-color: floralwhite;
+            font-family: ‘Lucida Sans Unicode’;
+            font-size: medium;
+            color: white;
+        }
+
+        body {
+            background-image: url('https://tattoocovenant.com/wp-content/uploads/2019/08/36801346-free-background-images.jpg');
+            background-repeat: repeat;
+            background-size: auto: color: white;
+            font-family: ‘Lucida Sans Unicode’;
+        }
+        .table-bordered th,
+        .table-bordered td {
+            border: 5px solid #dee2e6 !important;
+        }
+        .pagination-lg .page-link {
+            padding: 0.75rem 1.5rem;
+            font-size: 1.25rem;
+            line-height: 1.5;
+
+
+    </style>*@
+
+@using (Html.BeginForm("Search", "Product", FormMethod.Get))
+{
+<p>
+    Find by name: @Html.TextBox("searchString")
+    <input type="submit" value="Search" />
+</p>}
 
 <div style="display: block">
-    <a href="/Product/InsertProduct/">Create a New Product</a>
+    <a class="text-white" href="/Product/InsertProduct/">Create a New Product</a>
 </div>
 
-
-<table class="table">
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Category ID</th>
-        <th>On Sale</th>
-        <th>Stock Level</th>
-    </tr>
+@*<div><img src="wwwroot/images/\43bcf2ad-8861-46db-96c0-7837fb3ec381.png" /></div>*@
+<table class="table table-striped table-dark pagination-lg">
+    <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category ID</th>
+            <th>On Sale</th>
+            <th>Stock Level</th>
+            <th>Photo</th>
+        </tr>
+    </thead>
 
     @foreach (var product in Model)
     {
-        <tr>
-            <td><a href=/Product/ViewProduct/@product.ProductID>@product.ProductID</a></td>
-            <td>@product.Name</td>
-            <td>@product.Price</td>
-            <td>@product.CategoryID</td>
-            <td>@product.OnSale</td>
-            <td>@product.StockLevel</td>
-        </tr>
+<tr>
+    <td><a href=/Product/ViewProduct/@product.ProductID>@product.ProductID</a></td>
+    <td>@product.Name</td>
+    <td>@product.Price</td>
+    <td>@product.CategoryID</td>
+    <td>@product.OnSale</td>
+    <td>@product.StockLevel</td>
+    <td><img src="@product.Image" width="200"/></td>
+   
+</tr>
+}
 
-    }
 </table>
+

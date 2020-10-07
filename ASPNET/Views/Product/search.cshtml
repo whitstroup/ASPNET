@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Product>
+@*<style>
+        h2
+        {
+            color:floralwhite;
+        }
+
+        table {
+            background-color: floralwhite;
+            font-family: ‘Lucida Sans Unicode’;
+            font-size: medium;
+            color: white;
+        }
+
+        body {
+            background-image: url('https://tattoocovenant.com/wp-content/uploads/2019/08/36801346-free-background-images.jpg');
+            background-repeat: repeat;
+            background-size: auto: color: white;
+            font-family: ‘Lucida Sans Unicode’;
+        }
+        .table-bordered th,
+        .table-bordered td {
+            border: 5px solid #dee2e6 !important;
+        }
+        .pagination-lg .page-link {
+            padding: 0.75rem 1.5rem;
+            font-size: 1.25rem;
+            line-height: 1.5;
+
+
+    </style>*@
+
+<h2 class="text-white">Products</h2>
+<form asp-controller="Product" asp-action="Search">
+    <p>
+        Title: <input type="text" name="searchString">
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+
+<div style="display: block">
+    <a href="/Product/InsertProduct/">Create a New Product</a>
+</div>
+
+
+<table class="table table-striped table pagination-lg">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category ID</th>
+            <th>On Sale</th>
+            <th>Stock Level</th>
+        </tr>
+    </thead>
+
+    @foreach (var product in Model)
+    {
+        <tr>
+            <td><a href=/Product/ViewProduct/@product.ProductID>@product.ProductID</a></td>
+            <td>@product.Name</td>
+            <td>@product.Price</td>
+            <td>@product.CategoryID</td>
+            <td>@product.OnSale</td>
+            <td>@product.StockLevel</td>
+        </tr>
+    }
+</table>
+

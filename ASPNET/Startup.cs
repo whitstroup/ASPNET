@@ -34,6 +34,7 @@ namespace ASPNET
             });
 
             services.AddTransient<IProductRepository, ProductRepository>();
+            
 
             services.AddControllersWithViews();
         }
