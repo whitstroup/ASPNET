@@ -17,9 +17,12 @@
     <PackageReference Include="Microsoft.AspNet.Web.Optimization" Version="1.1.3" />
     <PackageReference Include="bootstrap" Version="4.5.2" />
     <PackageReference Include="PagedList.Mvc" Version="4.5.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.2.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Product\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Views\Cart\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\images\\4b589712-0faf-4d58-a0eb-e8741f3ed8c1.png" />

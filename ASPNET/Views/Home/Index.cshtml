@@ -1,13 +1,50 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@{ ViewData["Title"] = "Home Page"; }
+<style>
+    * {
+        box-sizing: border-box;
+    }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    <div><img src="/images/c7c36139-a432-4186-bf3e-0a348532de2f.png" /></div>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .videobg {
+        @*object-fit: cover;*@
+        height: 100vh;
+        overflow: hidden;
+        position: absolute; /* requires for to position video properly */
+    }
+
+    .paragraph{
+        position: center;
+    }
+
+    video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        object-fit: cover; /* combined with 'absolute', works like background-size, but for DOM elements */
+    }
+
+    div {
+        text-align: center;
+    }
+</style>
+<div  class=" videobg video-container justify-text-center">
+    
+
+
+    <div class="paragraph">
+
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+        @*<div><img src="/images/c7c36139-a432-4186-bf3e-0a348532de2f.png" /></div>*@
+    </div>
+
 </div>
-<blockquote>
-    <p>"You miss 100 percent of the burgers you don't eat. I'm hungry."</p>
-    <footer>—Whit Stroup, <cite>TrueCoders</cite></footer>
-</blockquote>
+
+

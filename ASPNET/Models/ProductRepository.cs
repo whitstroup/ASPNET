@@ -44,8 +44,9 @@ namespace ASPNET.Models
         public Product AssignCategory()
         {
             var categoryList = GetCategories();
+     
             var product = new Product();
-            product.Categories = categoryList;
+         
 
             return product;
         }

@@ -4,7 +4,6 @@ using ASPNET.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.FileProviders;
-using PagedList;
 
 namespace ASPNET.Controllers
 {
@@ -12,6 +11,7 @@ namespace ASPNET.Controllers
     {
 
         private readonly IProductRepository repo;
+   
 
         public ProductController(IProductRepository repo)
         {
@@ -28,7 +28,9 @@ namespace ASPNET.Controllers
             int pageSize = 10;
             int pageNumber = (page ?? 5);
 
+
             return View(products);
+
         }
 
         public IActionResult ViewProduct(int id)
@@ -58,6 +60,7 @@ namespace ASPNET.Controllers
         public IActionResult InsertProduct()
         {
             var prod = repo.AssignCategory();
+            
 
             return View(prod);
         }
@@ -86,6 +89,8 @@ namespace ASPNET.Controllers
 
             return View(search);
         }
+
+
 
         public IActionResult UploadButtonClick(IFormFile files, Product product)
         {
