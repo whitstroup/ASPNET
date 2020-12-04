@@ -32,7 +32,7 @@ namespace ASPNET
                 conn.Open();
                 return conn;
             });
-
+            
             services.AddTransient<IProductRepository, ProductRepository>();
             
             services.AddSession();
