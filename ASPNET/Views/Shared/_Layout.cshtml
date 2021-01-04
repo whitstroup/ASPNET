@@ -24,21 +24,28 @@
 <body class="BK">
     <header>
         <nav class="navbar navbar-expand-lg navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            @using (Html.BeginForm("Search", "Product", FormMethod.Get))
+            {
+        <p>
+            Find by name: @Html.TextBox("searchString")
+            <input type="submit" value="Search" />
+        </p>
 
+            }
             <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ASPNET</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="dropdown ">
+            <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Products
                 </button>
                 <div class="dropdown-menu dropdown-menu-wide" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">View Products</a>
                     <a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="Product" asp-action="InsertProduct">New Product</a>
-                    
+
                 </div>
             </div>
             <ul class="navbar-nav flex-grow-1">

@@ -62,11 +62,7 @@ namespace ASPNET.Models
                                        new { id = product.ProductID });
         }
 
-        public IEnumerable<Product> SearchProduct(string newname)
-        {
-            return _conn.Query<Product>("SELECT * FROM products WHERE NAME LIKE @name;",
-                new { name = "%" + newname + "%" });
-        }
+        
 
         public void InsertImage(Product product )
         {
@@ -74,8 +70,10 @@ namespace ASPNET.Models
                 new { image = product.Image, productid =product.ProductID });
         }
 
-
-
-
+        public IEnumerable<Product> SearchProduct(string search)
+        {
+            return _conn.Query<Product>("SELECT * FROM products WHERE NAME LIKE @name;",
+                new {name = "%" + search + "%"});
+        }
     }
 }

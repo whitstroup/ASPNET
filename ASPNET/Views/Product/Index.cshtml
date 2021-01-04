@@ -32,10 +32,13 @@
 
 @using (Html.BeginForm("Search", "Product", FormMethod.Get))
 {
-<p>
-    Find by name: @Html.TextBox("searchString")
-    <input type="submit" value="Search" />
-</p>}
+    <p>
+        Find by name: @Html.TextBox("searchString")
+        <input type="submit" value="Search" />
+    </p>
+
+}
+
 
 <div style="display: block">
     <a class="text-white" href="/Product/InsertProduct/">Create a New Product</a>
@@ -52,6 +55,7 @@
             <th>On Sale</th>
             <th>Stock Level</th>
             <th>Photo</th>
+            <th>Purchase</th>
         </tr>
     </thead>
 
@@ -64,11 +68,11 @@
     <td>@product.CategoryID</td>
     <td>@product.OnSale</td>
     <td>@product.StockLevel</td>
+    <td><img src="@product.Image" width="200" /></td>
     <td align="center">
         <a asp-controller="cart" asp-action="buy" asp-route-id="@product.ProductID">BuyNow</a>
     </td>
-    <td><img src="@product.Image" width="200"/></td>
-   
+
 </tr>
 }
 

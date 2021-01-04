@@ -21,6 +21,7 @@ namespace ASPNET.Controllers
         // GET: /<controller>/
         public IActionResult index(string sortOrder, string currentFilter, string searchString, int? page)
         {
+           
             ViewBag.CurrentSort = sortOrder;
             ViewBag.CurrentFilter = searchString;
             var products = repo.GetAllProducts();
@@ -81,16 +82,6 @@ namespace ASPNET.Controllers
 
 
 
-        public IActionResult Search(string searchString)
-        {
-            var search = repo.SearchProduct(searchString);
-
-
-
-            return View(search);
-        }
-
-
 
         public IActionResult UploadButtonClick(IFormFile files, Product product)
         {
@@ -129,7 +120,14 @@ namespace ASPNET.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult Search(string searchString)
+        {
+            var search = repo.SearchProduct(searchString);
 
+
+
+            return View(search);
+        }
 
     }
 }
