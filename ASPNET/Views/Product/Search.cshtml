@@ -55,6 +55,7 @@
             <th>On Sale</th>
             <th>Stock Level</th>
             <th>Photo</th>
+            <th>Purchase</th>
         </tr>
     </thead>
 
@@ -67,10 +68,10 @@
             <td>@product.CategoryID</td>
             <td>@product.OnSale</td>
             <td>@product.StockLevel</td>
+            <td><img src="@product.Image" width="200" /></td>
             <td align="center">
                 <a asp-controller="cart" asp-action="buy" asp-route-id="@product.ProductID">BuyNow</a>
             </td>
-            <td><img src="@product.Image" width="200" /></td>
 
         </tr>
     }

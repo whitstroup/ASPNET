@@ -34,8 +34,8 @@ namespace ASPNET.Models
         }
         public void InsertProduct(Product productToInsert)
         {
-            _conn.Execute("INSERT INTO products (NAME, PRICE, CATEGORYID) VALUES (@name, @price, @categoryID);",
-                new { name = productToInsert.Name, price = productToInsert.Price, categoryID = productToInsert.CategoryID });
+            _conn.Execute("INSERT INTO products (NAME, PRICE, CATEGORYID, LINK) VALUES (@name, @price, @categoryID, @link);",
+                new { name = productToInsert.Name, price = productToInsert.Price, categoryID = productToInsert.CategoryID, link = productToInsert.Link });
         }
         public IEnumerable<Category> GetCategories()
         {
@@ -70,10 +70,10 @@ namespace ASPNET.Models
                 new { image = product.Image, productid =product.ProductID });
         }
 
-        public IEnumerable<Product> SearchProduct(string search)
+        public IEnumerable<Product> SearchProduct(string searchstring)
         {
-            return _conn.Query<Product>("SELECT * FROM products WHERE NAME LIKE @name;",
-                new {name = "%" + search + "%"});
+            return _conn.Query<Product>("SELECT * FROM PRODUCTS WHERE NAME LIKE @name;",
+                new { name = "%" + searchstring + "%" });
         }
     }
 }

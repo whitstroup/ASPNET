@@ -123,12 +123,11 @@ namespace ASPNET.Controllers
 
         public IActionResult Search(string searchString)
         {
-            var search = repo.SearchProduct(searchString);
+            var searchResults = repo.SearchProduct(searchString);
 
-
-
-            return View(search);
+            return View(searchResults);
         }
+
 
     }
 }
